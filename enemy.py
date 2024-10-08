@@ -16,6 +16,17 @@ class Enemy:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
     def __init__(self, x: int, y: int) -> None:
         """
         敵キャラクターの初期座標を設定し、アイコンを初期化する。
