@@ -26,14 +26,35 @@ class Item:
     
         Returns: 
              None
+
+        Examples:
+            >>> item = Item(2, 3)
+            >>> item.now_x
+            2
+            >>> item.now_y
+            3
+            >>> item.next_x
+            2
+            >>> item.next_y
+            3
+            >>> item.icon
+            ''
+            >>> item.status
+            True
         """
 
-     def get_next_pos(self) -> tuple[int, int]:
+    def get_next_pos(self) -> tuple[int, int]:
         """
         次に移動する予定の座標を取得する。
 
         Returns:
-            tuple[int, int]: 次の座標 (x, y)
+            tuple[int, int]: 現在の座標 (x, y)
+
+            Examples:
+            >>> item = Item(2, 3)
+            >>> item.get_next_pos()
+            (2, 3)
+
         """
 
     def get_pos(self) -> tuple[int, int]:
@@ -42,11 +63,35 @@ class Item:
 
         Returns:
             tuple[int, int]: 現在の座標 (x, y)
+
+        Examples:
+            >>> item = Item(2, 3)
+            >>> item.get_pos()
+            (2, 3)
         """
 
     def update_pos(self) -> None:
         """
         アイテムの座標を更新する。次の座標に現在の座標を変更する。
-        
+
+        Args:
+            stuck (bool): そのターンに動けない場合にTrueを渡す (default: False)
+
+        Returns:
+            None
+
+        Examples:
+            >>> item = Item(2, 3)
+            >>> item.next_x = 3
+            >>> item.next_y = 4
+            >>> item.get_pos()
+            (2, 3)
+            >>> item.update_pos()
+            >>> item.get_pos()
+            (3, 4)
+
         """
     
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
