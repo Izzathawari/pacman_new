@@ -19,7 +19,7 @@ class Item:
     def __init__(self, x, y) -> None:
         """
         Itemクラス
-        
+        引数にx座標とy座標を受け取り、それぞれの座標を初期化する。
 
         Args:
             x (int): x座標
@@ -46,7 +46,8 @@ class Item:
 
     def get_next_pos(self) -> tuple[int, int]:
         """
-        次に移動する予定の座標を取得する。
+        次に移動する予定の座標を取得するメソッド。
+        デフォルトでは現在の座標を返すため，子クラスでオーバーライドすることを想定している．
 
         Returns:
             tuple[int, int]: 現在の座標 (x, y)
@@ -60,7 +61,8 @@ class Item:
 
     def get_pos(self) -> tuple[int, int]:
         """
-        現在の座標を取得する。
+        現在の座標を取得するメソッド。
+        デフォルトでは現在の座標を返すため，子クラスでオーバーライドすることを想定している．
 
         Returns:
             tuple[int, int]: 現在の座標 (x, y)
@@ -73,7 +75,8 @@ class Item:
 
     def update_pos(self) -> None:
         """
-        アイテムの座標を更新する。次の座標に現在の座標を変更する。
+        アイテムの座標を更新する。次の座標に現在の座標を変更するメソッド。
+        引数に次に移動したい座標をとり,その座標にプレイヤーの現在座標を更新する.
 
         Args:
             stuck (bool): そのターンに動けない場合にTrueを渡す (default: False)
