@@ -12,3 +12,5 @@ class field :
     enemy: enemyの初度の位置
 
     """
+def __init__(self, x: int, y: int) -> None:
+      pass
