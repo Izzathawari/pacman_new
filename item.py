@@ -5,6 +5,7 @@ block,enemy,food,playerの親クラス
 
 class Item:
     """block,enemy,food,playerの親クラス。
+    プレイヤーや他のオブジェクトのベースクラスとして機能し、共通の座標や状態を管理する。
 
     Attributes:
         now_x (int): 現在のx座標
@@ -17,11 +18,12 @@ class Item:
 
     def __init__(self, x, y) -> None:
         """
-        Item初期座標と初期状態を設定する。
+        Itemクラス
+        
 
         Args:
-            x (int): 初期のx座標
-            y (int): 初期のy座標
+            x (int): x座標
+            y (int): y座標
 
         Returns:
              None
