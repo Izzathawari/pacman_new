@@ -16,7 +16,6 @@ class Item:
         icon(str) : 表示されるアイテムのアイコン
     """
 
-<<<<<<< HEAD
     def __init__(self, x, y) -> None:
         """
         Item初期座標と初期状態を設定する。
@@ -96,7 +95,3 @@ class Item:
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
-=======
-    def __init__(self, x: int, y: int) -> None:
-      pass
->>>>>>> merge
