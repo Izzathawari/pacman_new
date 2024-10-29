@@ -42,6 +42,12 @@ class Item:
             >>> item.status
             True
         """
+        self.now_x = x
+        self.now_y = y
+        self.next_x = x
+        self.next_y = y
+        self.status = True
+        self.icon = ""
 
     def get_next_pos(self) -> tuple[int, int]:
         """
@@ -56,6 +62,9 @@ class Item:
             (2, 3)
 
         """
+        return (self.now_x,self.now_y)
+
+       
 
     def get_pos(self) -> tuple[int, int]:
         """
@@ -69,8 +78,9 @@ class Item:
             >>> item.get_pos()
             (2, 3)
         """
+        return (self.now_x,self.now_y)
 
-    def update_pos(self) -> None:
+    def update_pos(self,stuck:bool = False) -> None:
         """
         アイテムの座標を更新する。次の座標に現在の座標を変更する。
 
@@ -91,6 +101,13 @@ class Item:
             (3, 4)
 
         """
+        if stuck:  # そのターンに動けない場合更新しない
+            self.next_x = self.now_x
+            self.next_y = self.now_y
+            return
+        self.now_x = self.next_x
+        self.now_y = self.next_y
+
     
 if __name__ == "__main__":
     import doctest
