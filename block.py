@@ -1,20 +1,32 @@
+import doctest
+
+
 class Block:
     """
     ゲーム内のブロックを表すクラス。
     プレイヤーや敵の移動を制限する障害物として機能する。
 
-    Attributes:
-        now_x (int): ブロックのx座標
-        now_y (int): ブロックのy座標
-        icon (str): ブロックを表すアイコン
+   Attributes:
+        x (int): x座標
+        y (int): y座標
+        icon (str): 表示アイコン
+
+    Examples:
+        >>> block = Block(3, 3)
+        >>> block.now_x
+        3
+        >>> block.now_y
+        3
+        >>> block.icon
+        '🌴'
+        >>> isinstance(block, Item)
+        True
     """
 
-    def __init__(self, x: int, y: int) -> None:
-        """
-        ブロックの初期座標とアイコンを設定する。
+    def __init__(self, x, y) -> None:
+        super().__init__(x, y)
+        self.icon = "🌴"
 
-        Args:
-            x (int): ブロックのx座標
-            y (int): ブロックのy座標
-        """
-        pass
+
+if __name__ == "__main__":
+    doctest.testmod()
