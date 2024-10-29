@@ -42,6 +42,11 @@ class Player(Item):
             (2, 4)
 
         """
+
+        self.next_x = self.now_x + dir[0]
+        self.next_y = self.now_y + dir[1]
+        return (self.next_x, self.next_y)
+
         pass
 
     def change_face_good(self) -> None:
@@ -57,6 +62,9 @@ class Player(Item):
             >>> player.icon
             '😊'
         """
+
+        self.icon = "😊"
+
         pass
 
     def change_face_bad(self) -> None:
@@ -72,6 +80,9 @@ class Player(Item):
             >>> player.icon
             '😭'
         """
+
+        self.icon = "😭"
+
         pass
 
 
