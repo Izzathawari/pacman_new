@@ -2,11 +2,12 @@
 block,enemy,food,playerの親クラス
 """
 
+
 class Item:
     """block,enemy,food,playerの親クラス。
 
     ゲーム内のアイテムを表すクラス。
-    
+
     Attributes:
         now_x (int): 現在のx座標
         now_y (int): 現在のy座標
@@ -19,12 +20,12 @@ class Item:
     def __init__(self, x, y) -> None:
         """
         Item初期座標と初期状態を設定する。
-  
+
         Args:
             x (int): 初期のx座標
             y (int): 初期のy座標
-    
-        Returns: 
+
+        Returns:
              None
 
         Examples:
@@ -62,9 +63,7 @@ class Item:
             (2, 3)
 
         """
-        return (self.now_x,self.now_y)
-
-       
+        return (self.now_x, self.now_y)
 
     def get_pos(self) -> tuple[int, int]:
         """
@@ -76,11 +75,11 @@ class Item:
         Examples:
             >>> item = Item(2, 3)
             >>> item.get_pos()
-            (2, 3)
+            (2,3)
         """
-        return (self.now_x,self.now_y)
+        return (self.now_x, self.now_y)
 
-    def update_pos(self,stuck:bool = False) -> None:
+    def update_pos(self, stuck:bool = False) -> None: 
         """
         アイテムの座標を更新する。次の座標に現在の座標を変更する。
 
@@ -108,7 +107,7 @@ class Item:
         self.now_x = self.next_x
         self.now_y = self.next_y
 
-    
+
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
