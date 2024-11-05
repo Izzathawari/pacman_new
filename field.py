@@ -41,6 +41,9 @@ class field:
             f_size (int): フィールドのサイズ
         """
 
+        self.f_size = f_size
+        self.field = [[" " for _ in range(f_size)] for _ in range(f_size)]
+
         pass
 
     def update_field(self) -> list[list[str]]:
