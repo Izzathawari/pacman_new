@@ -1,8 +1,5 @@
 from item import Item
 from player import Player
-from enemy import Enemy
-from food import Food
-from block import Block
 
 
 class field:
@@ -26,9 +23,7 @@ class field:
     def __init__(
             self,
             players: list[Player],
-            enemies: list[Enemy],
-            foods: list[Food],
-            blocks: list[Block],
+
             f_size: int = 6) -> None:
         """
         Fieldクラスの初期化を行う関数
@@ -43,6 +38,9 @@ class field:
 
         self.f_size = f_size
         self.field = [[" " for _ in range(f_size)] for _ in range(f_size)]
+        self.players = players
+
+        self.update_field()
 
         pass
 
@@ -76,7 +74,15 @@ class field:
             >>> field.update_field()[2]
             ['b1', 'b2', '\\u3000']
         """
-
+        # fieldを一旦すべて空白にする
+        for i in range(len(self.field)):
+            for j in range(len(self.field[i])):
+                self.field[i][j] = "　"
+        #  Fieldを更新する処理を記述
+        for player in self.players:
+            if player.status:
+                self.field[player.now_y][player.now_x] = player.icon
+        return self.field
         pass
 
     # 衝突判定を行う関数
@@ -107,6 +113,10 @@ class field:
             >>> r is e
             True
         """
+        for item in items:
+            if item.next_x == target.next_x and item.next_y == target.next_y:
+                return item
+        return None
 
         pass
 
@@ -142,6 +152,21 @@ class field:
         """
 
         pass
+
+        # 動きか方を表示
+        print("w: 上に移動")
+        print("a: 左に移動")
+        print("s: 下に移動")
+        print("d: 右に移動")
+
+        # self.fieldを表示する処理を記述
+        max_width = max(len(row) for row in self.field)  # フィールド内の最大幅を取得
+
+        for row in self.field:
+            # 各行の文字列を作成し、不足分を空白文字で埋める
+            row_str = "".join(row)
+            row_str = row_str.ljust(max_width)
+            print(row_str)
 
 
 if __name__ == "__main__":
