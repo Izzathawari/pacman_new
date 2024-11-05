@@ -1,4 +1,5 @@
 from item import Item
+import random
 
 
 class Enemy(Item):
@@ -37,6 +38,12 @@ class Enemy(Item):
             >>> next_move in possible_moves
             True
        """
+        directions = [(0, 0), (1, 0), (-1, 0), (0, 1), (0, -1)]
+        dir = random.choice(directions)
+        self.next_x = self.now_x + dir[0]
+        self.next_y = self.now_y + dir[1]
+        return (self.next_x, self.next_y)
+
         pass
 
 
