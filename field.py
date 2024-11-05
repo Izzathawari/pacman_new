@@ -39,7 +39,6 @@ class field:
         self.f_size = f_size
         self.field = [[" " for _ in range(f_size)] for _ in range(f_size)]
         self.players = players
-
         self.update_field()
 
         pass
@@ -105,7 +104,7 @@ class field:
             >>> e = Item(1, 1)
             >>> field = Field([p], [e], [], [])
             >>> p.next_x = 1
-            >>> r = field.check_bump(p, [e])
+            >>> r = field.check_bump(p, [e], Item)
             >>> r is None
             True
             >>> p.next_y = 1
