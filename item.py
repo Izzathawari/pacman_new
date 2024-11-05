@@ -73,11 +73,11 @@ class Item:
             tuple[int, int]: 現在の座標 (x, y)
 
         Examples:
-            >>> item = Item(2, 3)
+            >>> item = Item(2,3)
             >>> item.get_pos()
-            (2,3)
+            (2, 3)
         """
-        return (self.now_x, self.now_y)
+        return (self.now_x,self.now_y)
 
     def update_pos(self, stuck:bool = False) -> None: 
         """
