@@ -1,7 +1,8 @@
+from item import Item
 import doctest
 
 
-class Block:
+class Block (Item):
     """
     ゲーム内のブロックを表すクラス。
     プレイヤーや敵の移動を制限する障害物として機能する。

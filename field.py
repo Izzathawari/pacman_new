@@ -1,14 +1,15 @@
 from item import Item
 from player import Player
+from enemy import Enemy
+from food import Food
+from block import Block
 
 
-class field:
-    """ Fieldクラス
-
-    Field クラスはゲームのフィルドを表すクラス。
+class Field:
+    """Fieldクラス
+    Fieldクラスは、ゲームのフィールドを表すクラスです。
     プレイヤー、敵、アイテムの位置を更新し、Fieldを表示する機能を持ちます。
     位置を更新する際に衝突判定を行います。
-
 
     Attributes:
         players (list[Player]): プレイヤーのリスト
@@ -18,12 +19,14 @@ class field:
         field (list[list[str]]): フィールドの情報
         f_size (int): フィールドのサイズ
     """
-    pass
 
+    #  Fieldを生成する関数
     def __init__(
             self,
             players: list[Player],
-
+            enemies: list[Enemy],
+            foods: list[Food],
+            blocks: list[Block],
             f_size: int = 6) -> None:
         """
         Fieldクラスの初期化を行う関数
@@ -35,13 +38,14 @@ class field:
             blocks (list[Block]): ブロックのリスト
             f_size (int): フィールドのサイズ
         """
-
         self.f_size = f_size
-        self.field = [[" " for _ in range(f_size)] for _ in range(f_size)]
+        self.field = [["　" for _ in range(f_size)] for _ in range(f_size)]
         self.players = players
+        self.enemies = enemies
+        self.foods = foods
+        self.blocks = blocks
+        # それぞれのアイテムの位置をFieldに反映
         self.update_field()
-
-        pass
 
     def update_field(self) -> list[list[str]]:
         """
@@ -78,11 +82,19 @@ class field:
             for j in range(len(self.field[i])):
                 self.field[i][j] = "　"
         #  Fieldを更新する処理を記述
+        for food in self.foods:
+            if food.status:
+                self.field[food.now_y][food.now_x] = food.icon
+        for enemy in self.enemies:
+            if enemy.status:
+                self.field[enemy.now_y][enemy.now_x] = enemy.icon
+        for block in self.blocks:
+            if block.status:
+                self.field[block.now_y][block.now_x] = block.icon
         for player in self.players:
             if player.status:
                 self.field[player.now_y][player.now_x] = player.icon
         return self.field
-        pass
 
     # 衝突判定を行う関数
     def check_bump(
@@ -104,7 +116,7 @@ class field:
             >>> e = Item(1, 1)
             >>> field = Field([p], [e], [], [])
             >>> p.next_x = 1
-            >>> r = field.check_bump(p, [e], Item)
+            >>> r = field.check_bump(p, [e])
             >>> r is None
             True
             >>> p.next_y = 1
@@ -112,12 +124,11 @@ class field:
             >>> r is e
             True
         """
+        # 衝突判定を行う処理を記述
         for item in items:
             if item.next_x == target.next_x and item.next_y == target.next_y:
                 return item
         return None
-
-        pass
 
     # Fieldを表示する関数
     def display_field(self) -> None:
@@ -149,9 +160,6 @@ class field:
             f1e2　
             b1b2　
         """
-
-        pass
-
         # 動きか方を表示
         print("w: 上に移動")
         print("a: 左に移動")
