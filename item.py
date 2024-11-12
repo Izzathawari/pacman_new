@@ -77,9 +77,9 @@ class Item:
             >>> item.get_pos()
             (2, 3)
         """
-        return (self.now_x,self.now_y)
+        return (self.now_x, self.now_y)
 
-    def update_pos(self, stuck:bool = False) -> None: 
+    def update_pos(self, stuck: bool = False) -> None:
         """
         アイテムの座標を更新する。次の座標に現在の座標を変更する。
 
