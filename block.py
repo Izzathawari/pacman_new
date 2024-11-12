@@ -4,8 +4,8 @@ import doctest
 
 class Block (Item):
     """
-    ゲーム内のブロックを表すクラス。
-    プレイヤーや敵の移動を制限する障害物として機能する。
+    ゲーム内のBlockを表すクラス.
+    アイコン管理とアイテムの位置を表すクラス.
 
    Attributes:
         x (int): x座標
