@@ -1,3 +1,4 @@
+from game import Game
 import os
 import argparse
 from config import common_args, Parameters
@@ -21,7 +22,7 @@ def main() -> None:
     result_dir = f'result/{params.run_date}'  # 結果出力ディレクトリ
     os.mkdir(result_dir)  # 実行日時を名前とするディレクトリを作成
     dump_params(params, f'{result_dir}')  # パラメータを出力
-    
+
     # ログ設定
     logger = logging.getLogger(__name__)
     set_logging(result_dir)  # ログを標準出力とファイルに出力するよう設定
@@ -29,10 +30,10 @@ def main() -> None:
     # 使用例
     logger.info('parameters: ')
     logger.info(params)
-    logger.info(params.param1)  # params変数は各パラメータにドットアクセスが可能．
-    logger.info(params.args['arg1'])  # コマンドライン引数はargs['']でアクセス．
+    # logger.info(params.param1)  # params変数は各パラメータにドットアクセスが可能．
+    # logger.info(params.args['arg1'])  # コマンドライン引数はargs['']でアクセス．
 
-    # do something...
+    Game(params)
 
 
 if __name__ == "__main__":
