@@ -20,7 +20,7 @@ class Food(Item):
         >>> food.now_y
         5
         >>> food.icon
-        '🍒'
+        '🍌'
         >>> food.status
         True
         >>> isinstance(food, Item)
@@ -29,7 +29,7 @@ class Food(Item):
 
     def __init__(self, x, y) -> None:
         super().__init__(x, y)
-        self.icon = "🍒"
+        self.icon = "🍌"
 
 
 if __name__ == "__main__":
