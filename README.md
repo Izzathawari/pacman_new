@@ -4,8 +4,13 @@
 このREADMEは雛形ですので，適宜修正してください．
 
 ## Requirement
-- Python 3.9
-
+- Python 3.12.5
+- Linux (Windows)
+- Git
+- Github
+- venv
+- pyenv
+- VSCode (IDE)
 
 ## Installation
 - 結果出力用ディレクトリを作成
@@ -15,6 +20,16 @@ mkdir result
 - 各種モジュールのインストール
 ```shell
 pip install -r requirements.txt
+```
+- pyenvはPythonのバージョン管理ツール, pyenvの3.12.5のバージョン
+```shell
+pyenv install 3.12.5
+```
+- venvはPythonの仮想環境を作るためのツール。venv の使う利点が仮想環境を使えば、プロジェクトごとに独立した環境を作り、それぞれに必要なバージョンのPythonやライブラリをインストールできます。
+```shell
+cd <プロジェクトディレクトリのパス>
+python -m venv venv
+source venv/bin/activate
 ```
 
 
