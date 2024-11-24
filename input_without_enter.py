@@ -9,16 +9,20 @@ class InputWithoutEnter:
         '''エンターキーを押さずに入力を受け取る
         Returns:
             str: 入力された文字
+
+        sysは入力と出力の便利なメソッドである
         '''
 
         # 標準入力のファイルディスクリプタを取得
-        fd = sys.stdin.fileno()
+        fd = sys.stdin.fileno() #sys.stdinはコマンドラインでユーザから入力を受け取り
+                                #sys.stdin accept input from user in command line
+                                #fileno()はファイルの番号である
 
-        # fdの端末属性をゲットする
+        # fdの端末属性をゲットする #fd は file description 
         # oldとnewには同じものが入る。
         # newに変更を加えて、適応する
         # oldは、後で元に戻すため
-        old = termios.tcgetattr(fd)
+        old = termios.tcgetattr(fd) #termios.tcgetattr(fd)は list を返す[iflag, oflag, cflag, lflag, ispeed, ospeed, cc]    
         new = termios.tcgetattr(fd)
 
         # new[3]はlflags

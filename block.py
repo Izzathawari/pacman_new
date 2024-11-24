@@ -6,6 +6,7 @@ class Block (Item):
     """
     ゲーム内のBlockを表すクラス.
     アイコン管理とアイテムの位置を表すクラス.
+    isinstance(1番の引数,2番の引数) は 1番の引数が2番の引数の型を確認してTrueあるいはFalseを返す
 
    Attributes:
         x (int): x座標
