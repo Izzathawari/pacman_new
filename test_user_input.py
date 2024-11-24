@@ -5,11 +5,15 @@ from user_input import UserInput
 
 class TestUserInput(unittest.TestCase):
 
+    #unittest を使うとメソッドの機能を確認すること
+
+    # unittest can verify the method functionality
+
     @patch("builtins.input", side_effect=["w"])
     def test_get_user_input_A_up(self, mock_input):
         expected = (0, -1)
         result = UserInput.get_user_input()
-        self.assertEqual(expected, result)
+        self.assertEqual(expected, result) #assertEqual(1番目の引数、2番目の引数) は1番目の引数と2番目の引数を比較すること
 
     @patch("builtins.input", side_effect=["a"])
     def test_get_user_input_B_left(self, mock_input):
