@@ -49,7 +49,7 @@ class Field:
 
     def update_field(self) -> list[list[str]]:
         """
-        敵、プレイヤー、アイテムを配置を参照して、Fieldを更新する関数
+        フィールドの状態を再設定し、プレイヤー、敵、アイテム、ブロックを配置する関数。
 
         Returns:
             list[list[str]]: 更新されたField
