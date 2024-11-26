@@ -7,6 +7,7 @@ class Item:
     """block,enemy,food,playerの親クラス。
 
     ゲーム内のアイテムを表すクラス。
+    プレイヤーや他のオブジェクトのベースクラスとして機能し、共通の座標や状態を管理する。
 
     Attributes:
         now_x (int): 現在のx座標

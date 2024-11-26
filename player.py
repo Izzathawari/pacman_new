@@ -23,7 +23,6 @@ class Player(Item):
 
     def get_next_pos(self, dir: tuple[int, int]) -> tuple[int, int]:
         """
-        入力から移動方向を受け取って移動しようとする方向を計算して次の座標を返すメソッド
         入力された移動方向に基づき、次の移動座標を計算する.
 
         Args:
@@ -51,7 +50,6 @@ class Player(Item):
 
     def change_face_good(self) -> None:
         """
-        プレイヤーのアイコンを変更するメソッド
         プレイヤーのアイコンを😊に変更する.
 
         Examples:
@@ -69,7 +67,6 @@ class Player(Item):
 
     def change_face_bad(self) -> None:
         """
-        プレイヤーのアイコンを変更するメソッド
         プレイヤーのアイコンを😭に変更する.
 
         Examples:
