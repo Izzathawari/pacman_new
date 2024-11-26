@@ -27,7 +27,7 @@ class Parameters:
     run_date: str = ''  # 実行時の時刻
     git_revision: str = ''  # 実行時のプログラムのGitのバージョン
     
-    field_size: int = 12  #フィルドサイズの1辺の長さ
+    field_size: int = 20  #フィルドサイズの1辺の長さ
     enemy_num: int = 10  #敵の数
     food_num: int = 2  #食べ物の数
 
