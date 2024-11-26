@@ -28,8 +28,8 @@ class Parameters:
     git_revision: str = ''  # 実行時のプログラムのGitのバージョン
     
     field_size: int = 20  #フィルドサイズの1辺の長さ
-    enemy_num: int = 10  #敵の数
-    food_num: int = 2  #食べ物の数
+    enemy_num: int = 12  #敵の数
+    food_num: int = 4  #食べ物の数
 
 
 def common_args(parser: 'ArgumentParser'):
