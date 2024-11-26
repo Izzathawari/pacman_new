@@ -26,11 +26,13 @@ class Enemy(Item):
         """ランダムに動きたい方向を計算して次の座標を返すメソッド.
         random.choiceを用いて、ランダムに上下左右の方向のいずれかを選び、その方向に基づいて次の座標を返す。
         random.choice ()が文字列、range、list、tupleいずれもできる
-        random.choice()をすると持っていることが random.choice() = tuple[x_random , y_random]
+        random.choice()をすると持っていることが
+        random.choice() = tuple[x_random , y_random]
         それで現在の座標が self [x + x_random , y + y_random]である。
 
 
-        random.choice(), returns a randomly selected element from the specified sequence.
+        random.choice(), returns a randomly selected element
+        from the specified sequence.
         for example : [(x1,y1),(x2,y2),(x3,y3)]
         random.choice() = tuple[x_random , y_random] from the given list
         for example: random.choice() = (x1,y1)
