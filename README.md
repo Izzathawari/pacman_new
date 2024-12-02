@@ -31,7 +31,7 @@ cd <プロジェクトディレクトリのパス>
 python -m venv venv
 source venv/bin/activate
 ```
-
+-VSCodeというIDEをインストールする
 
 ## Usage
 - メインプログラムを実行．
