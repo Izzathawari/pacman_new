@@ -27,9 +27,9 @@ class Parameters:
     run_date: str = ''  # 実行時の時刻
     git_revision: str = ''  # 実行時のプログラムのGitのバージョン
     
-    field_size: int = 20  #フィルドサイズの1辺の長さ
-    enemy_num: int = 12  #敵の数
-    food_num: int = 4  #食べ物の数
+    field_size: int = 16  #フィルドサイズの1辺の長さ
+    enemy_num: int = 8  #敵の数
+    food_num: int = 3 #食べ物の数
 
 
 def common_args(parser: 'ArgumentParser'):
