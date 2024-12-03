@@ -46,7 +46,7 @@ class Player(Item):
         self.next_y = self.now_y + dir[1]
         return (self.next_x, self.next_y)
 
-        pass
+        
 
     def change_face_good(self) -> None:
         """
@@ -63,7 +63,7 @@ class Player(Item):
 
         self.icon = "😊"
 
-        pass
+        
 
     def change_face_bad(self) -> None:
         """
@@ -80,7 +80,7 @@ class Player(Item):
 
         self.icon = "😭"
 
-        pass
+        
 
 
 if __name__ == "__main__":
