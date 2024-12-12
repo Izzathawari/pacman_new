@@ -70,10 +70,19 @@ python main.py -h
 - プロジェクトの構成は以下の通り．
 ```shell
 .
-├── config.py           # パラメータ定義
-├── main.py             # 実行ファイル
-├── parameters.json     # パラメータ指定用ファイル
-├── result              # 結果出力ディレクトリ
-│   └── 20211026_165841
-└── utils.py            # 共有関数群
+├── config.py             # パラメータ定義
+├── main.py               # 実行ファイル
+├── item.py               #ゲーム内の特徴ファイル
+├── player.py             #プレイヤーファイル
+├── enemy.py              #エネミーファイル
+├── block.py              #ゲームの壁ファイル
+├── field.py            
+├── food.py               #プレイヤーの食べ物ファイル
+├── game.py               #ゲームの機能ファイル
+├── user_input.py         #ユーザ入力ファイル
+├── input_without_enter.py
+├── test_user_input.py  
+├── parameters.json       # パラメータ指定用ファイル
+├── result                # 結果出力ディレクトリ
+└── utils.py              # 共有関数群
 ```
